@@ -21,10 +21,10 @@ public class CountDownLathTest {
 
         try {
             //阻塞当前线程（主线程）1s，然后执行
-//            countDownLatch.await(1, TimeUnit.SECONDS);
+            countDownLatch.await(1, TimeUnit.SECONDS);
 
             //阻塞当前线程（主线程），直到倒数计数器倒数到0
-            countDownLatch.await();
+//            countDownLatch.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

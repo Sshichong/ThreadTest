@@ -4,7 +4,7 @@ package threadMethod;
  * Created by shichong on 2018/6/19.
  *
  * join()方法的使用
- * 合并某个线程
+ * 阻塞主线程，子线程执行完之后再向下执行
  */
 public class TestThread4 {
 
@@ -14,8 +14,7 @@ public class TestThread4 {
         thread2.start();    //启动线程
 
         try {
-            thread2.join(); //调用join()方法合并线程，将子线程mythread合并到主线程里面
-            //合并线程后，程序的执行的过程就相当于方法的调用的执行过程
+            thread2.join(); //阻塞主线程，子线程执行完之后再向下执行主线程
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -25,7 +24,20 @@ public class TestThread4 {
         }
     }
 
-
+/*
+I am a	mythread
+I am a	mythread
+I am a	mythread
+I am a	mythread
+I am a	mythread
+I am a	mythread
+I am main Thread
+I am main Thread
+I am main Thread
+I am main Thread
+I am main Thread
+I am main Thread
+ */
 
     public static class MyThread2 extends Thread{
         MyThread2(String s){
