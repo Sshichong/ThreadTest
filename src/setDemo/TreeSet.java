@@ -58,7 +58,7 @@ public class TreeSet {
 }
 
 /**
- *让元素自身具备比较性。实现Comparable接口，覆盖conpareTo方法
+ * 让元素自身具备比较性。实现Comparable接口，覆盖conpareTo方法
  */
 class People implements Comparable{
     private String name;
